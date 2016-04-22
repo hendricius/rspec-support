@@ -21,10 +21,6 @@ Gem::Specification.new do |spec|
 
 
   private_key = ""
-  begin
-    private_key = File.expand_path('~/.gem/rspec-gem-private_key.pem')
-  rescue ArgumentError => e
-  end
   if File.exist?(private_key)
     spec.signing_key = private_key
     spec.cert_chain = [File.expand_path('~/.gem/rspec-gem-public_cert.pem')]
